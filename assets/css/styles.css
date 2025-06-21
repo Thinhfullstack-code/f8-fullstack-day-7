@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700|Source+Sans+Pro:300,400,600,700");
+
+:root {
+  --font-heading: "PT Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro";
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.top-page {
+  display: flex;
+  min-height: 496px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/banner-top-page.jpg) no-repeat center/cover;
+}
+
+.container {
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-page .inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  width: 1170px;
+  display: flex;
+  margin-top: 30px;
+  min-height: 60px;
+  color: #ccc;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.narbar {
+  color: #fff;
+  display: flex;
+}
+
+.user-action {
+  display: flex;
+  color: #fff;
+}
+
+.user-action .action-btn {
+  padding: 15px;
+}
+
+.header .narbar a {
+  padding: 15px 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  color: #fff;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  display: flex;
+}
+
+.breadcrumbs li {
+  display: flex;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  padding: 0px 10px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+/* content */
+
+.content {
+  margin-top: 100px;
+}
+
+.input-courses {
+  display: flex;
+  border: 1px solid #ccc;
+  width: 270px;
+  height: 44px;
+  border-radius: 999px;
+  background-color: #fff;
+  padding: 0 16px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  gap: 40px;
+}
+
+.input {
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+.search-icon {
+  color: #ccc;
+  background-color: transparent;
+  border: none;
+}
+
+/* Topics */
+.topics {
+  width: 270px;
+}
+
+.title {
+  padding: 30px 0px 20px 0px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.topics-list {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: inherit;
+  border: #ccc solid 1px;
+}
+
+.topics-list a {
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+.topics-list ul {
+  border-bottom: #ccc solid 1px;
+}
+
+.topics-list li {
+  display: block;
+  line-height: 40px;
+  border-bottom: #ccc solid 1px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+.content-right {
+  flex-grow: 1;
+}
+
+.action-tabs {
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 99px;
+  padding: 0px 14px;
+}
+
+.active {
+  background-color: #783df0;
+  color: #fff;
+}
+
+.action-tabs:hover {
+  background-color: #783df0;
+  color: #fff;
+}
+
+.courses-list {
+  display: flex;
+  margin-top: 60px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.courses-list-content {
+  width: calc(33.33% - 20px);
+}
+
+.img img {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+}
+
+.list-content {
+  padding: 15px 20px;
+  border: #ccc 1px solid;
+  border-top-color: transparent;
+}
+
+.list-title {
+  color: #464646;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.desc {
+  margin: 20px 0px;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+.clearfix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearfix-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.qnt {
+  display: flex;
+  gap: 8px;
+}
+
+.courses-pagination {
+  display: flex;
+  margin-top: 75px;
+  gap: 8px;
+}
+
+.choose {
+  width: 29px;
+  line-height: 27px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.choose:hover,
+.choose.active {
+  border-color: #783df0;
+  background-color: transparent;
+  color: #783df0;
+}
+
+.next {
+  margin-left: 10px;
+  border-radius: 8px;
+}
