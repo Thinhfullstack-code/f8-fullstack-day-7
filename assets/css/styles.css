@@ -210,7 +210,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid #ccc; */
   border-radius: 99px;
   padding: 0px 14px;
 }
@@ -311,4 +310,92 @@ h3 {
 .next {
   margin-left: 10px;
   border-radius: 8px;
+}
+
+.footer {
+  display: flex;
+  background: #151515;
+  padding: 80px 0 160px 0;
+  margin-top: 100px;
+  color: #ffffff99;
+}
+.footer-left,
+.footor-subcribe {
+  width: 300px;
+  height: 262px;
+  font-size: 14px;
+  color: #ffffff99;
+  line-height: 22px;
+  padding: 0px 15px;
+}
+
+.p-content {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.footer-img {
+  display: flex;
+  margin-top: 30px;
+  gap: 22px;
+}
+
+.footer-center {
+  display: flex;
+  color: #ffffff99;
+}
+
+.footer-content {
+  display: flex;
+}
+
+.footer-center a {
+  display: inline-block;
+  line-height: 30px;
+}
+
+.footer-list {
+  width: 200px;
+  height: 205px;
+  padding: 0px 15px;
+}
+.footer-subcribe {
+  display: flex;
+}
+
+.footer-list h6,
+.footor-subcribe h6 {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0px 25px 0px;
+}
+
+.footor-subcribe .footer-action {
+  width: 100%;
+  height: 40px;
+  background: #272727;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin: 25px 0 10px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footor-subcribe .send-infor {
+  width: 95px;
+  height: 40px;
+  border-radius: 20px;
+  color: #fff;
+  letter-spacing: 1.5px;
+  background: #b80257;
+  font-size: 1.6rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
