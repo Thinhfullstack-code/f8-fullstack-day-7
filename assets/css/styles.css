@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: "Source Sans Pro";
 }
 
@@ -35,6 +35,7 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 h1,
@@ -108,19 +109,24 @@ h6 {
 
 .breadcrumbs {
   display: flex;
+  margin-top: 10px;
 }
 
 .breadcrumbs li {
   display: flex;
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs li + li::before {
   content: "/";
-  padding: 0px 10px;
+  padding: 0px 4px;
 }
 
 h3 {
-  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: 700;
 }
 
 /* content */
@@ -130,6 +136,7 @@ h3 {
 }
 
 .input-courses {
+  position: relative;
   display: flex;
   border: 1px solid #ccc;
   width: 270px;
@@ -152,6 +159,10 @@ h3 {
   color: #ccc;
   background-color: transparent;
   border: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Topics */
@@ -167,10 +178,10 @@ h3 {
 }
 
 .topics-list {
-  font-size: 15px;
+  font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.7);
   font-family: inherit;
-  border: #ccc solid 1px;
+  border: rgba(0, 0, 0, 0.05) solid 1px;
 }
 
 .topics-list a {
@@ -178,19 +189,23 @@ h3 {
   margin-left: 25px;
 }
 
-.topics-list ul {
-  border-bottom: #ccc solid 1px;
-}
+/* .topics-list ul {
+  border-bottom: rgba(0, 0, 0, 0.5) solid 1px;
+} */
 
 .topics-list li {
   display: block;
   line-height: 40px;
-  border-bottom: #ccc solid 1px;
+  border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+}
+
+.topics-list li:last-child {
+  border-bottom: none;
 }
 
 .content {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .navbar-right {
@@ -243,7 +258,7 @@ h3 {
 
 .list-content {
   padding: 15px 20px;
-  border: #ccc 1px solid;
+  border: 1px solid #eeeeee;
   border-top-color: transparent;
 }
 
@@ -257,7 +272,7 @@ h3 {
 .desc {
   margin: 20px 0px;
   line-height: 22px;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .clearfix {
@@ -348,10 +363,13 @@ h3 {
 .footer-content {
   display: flex;
 }
-
 .footer-center a {
   display: inline-block;
   line-height: 30px;
+}
+
+.footer-center a:hover {
+  color: #b80257;
 }
 
 .footer-list {
@@ -390,6 +408,11 @@ h3 {
   letter-spacing: 1.5px;
   background: #b80257;
   font-size: 1.6rem;
+}
+
+.footor-subcribe .send-infor:hover {
+  background: white;
+  color: #b80257;
 }
 
 input:focus {
