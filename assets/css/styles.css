@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -119,6 +124,10 @@ h6 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.breadcrumbs li a:hover {
+  color: #783df0;
+}
+
 .breadcrumbs li + li::before {
   content: "/";
   padding: 0px 4px;
@@ -185,18 +194,22 @@ h3 {
 }
 
 .topics-list a {
+  display: block;
   text-decoration: none;
   margin-left: 25px;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
 }
-
-/* .topics-list ul {
-  border-bottom: rgba(0, 0, 0, 0.5) solid 1px;
-} */
 
 .topics-list li {
   display: block;
   line-height: 40px;
   border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+}
+
+.topics-list a:hover {
+  color: #7e3ff2;
+  transform: translateX(8px);
 }
 
 .topics-list li:last-child {
@@ -227,11 +240,20 @@ h3 {
   align-items: center;
   border-radius: 99px;
   padding: 0px 14px;
+  transition: all 0.3s ease-in-out;
 }
 
 .active {
   background-color: #783df0;
   color: #fff;
+}
+
+.action-tabs.next {
+  background-color: #783df0;
+  color: #fff;
+}
+.navbar-right.action-tabs {
+  transition: all 0.5s ease-in-out;
 }
 
 .action-tabs:hover {
@@ -248,12 +270,69 @@ h3 {
 
 .courses-list-content {
   width: calc(33.33% - 20px);
+  transition: transform 0.3s ease;
+}
+
+.courses-list-content:hover .img img {
+  transform: scale(1.1) !important;
+}
+
+.courses-list-content:hover h6 {
+  color: #b80257;
 }
 
 .img img {
   width: 100%;
   object-fit: cover;
-  display: flex;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.img:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+}
+
+.img {
+  overflow: hidden;
+}
+
+.action-tabs {
+  position: relative;
+  display: inline-block;
+}
+.action-tabs.active:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-tabs.active::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 5%;
+  width: 90%;
+  height: 10px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  border-radius: 50%;
+
+  transform: translateY(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.action-tabs.active:hover {
+  transform: translateY(-5px);
+}
+
+.action-tabs.active:hover::after {
+  opacity: 1;
 }
 
 .list-content {
@@ -334,6 +413,11 @@ h3 {
   margin-top: 100px;
   color: #ffffff99;
 }
+
+.footer-list li {
+  transition: all 0.5s ease-in-out;
+}
+
 .footer-left,
 .footor-subcribe {
   width: 300px;
@@ -401,6 +485,7 @@ h3 {
 }
 
 .footor-subcribe .send-infor {
+  position: relative;
   width: 95px;
   height: 40px;
   border-radius: 20px;
@@ -408,10 +493,34 @@ h3 {
   letter-spacing: 1.5px;
   background: #b80257;
   font-size: 1.6rem;
+  transition: color 0.4s ease;
+}
+
+.send-infor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: scale(0);
+  border-radius: 20px;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.send-class {
+  position: relative;
+  z-index: 2;
+}
+
+.send-infor:hover::before {
+  transform: scale(1);
 }
 
 .footor-subcribe .send-infor:hover {
-  background: white;
+  /* background: white; */
   color: #b80257;
 }
 
@@ -421,4 +530,71 @@ input:focus {
 
 input:focus::placeholder {
   color: transparent;
+}
+
+.sub-menu {
+  position: absolute;
+  width: 220px;
+  top: 32px;
+  left: -12px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+.narbar > li:hover .sub-menu {
+  transform: scaleY(1);
+}
+
+.narbar li {
+  position: relative;
+}
+
+.sub-menu li a {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: capitalize;
+  display: block;
+  padding: 0 0 0 25px;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  font-family: "Source Sans Pro" !important;
+  font-weight: normal !important;
+}
+
+.sub-menu:first-child li:first-child a {
+  background: #b80257;
+  color: #fff;
+}
+
+.sub-menu li a:hover {
+  background: #b80257;
+  color: #fff;
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background-color: #b80257;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-button:hover {
+  background-color: #90023d;
+}
+
+.scroll-button i {
+  pointer-events: none;
 }
